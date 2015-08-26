@@ -65,6 +65,8 @@
 			/declare queue[10]
 			/varset ${queue} ${ChatSender}
 			/echo DEBUG-- ${queue}
+			| Full Chanter Logic without Queue 
+			| TODO(Evans): to add queue will need to change ${ChatSender} to name from queue
             /if (${Spawn[pc ${ChatSender}].Class.Name.Equals["Shaman"] || ${Spawn[pc ${ChatSender}].Class.Name.Equals["Wizard"] || ${Spawn[pc ${ChatSender}].Class.Name.Equals["Mage"] || ${Spawn[pc ${ChatSender}].Class.Name.Equals["Druid"]) {
 				/call CastSpellFromTell "Clarity" "Spell" ${Spawn[pc ${ChatSender}].ID}
 				/delay 3.1s
@@ -74,6 +76,30 @@
 			/if (${Spawn[pc ${ChatSender}].Class.Name.Equals["Necromancer"] || ${Spawn[pc ${ChatSender}].Class.Name.Equals["Cleric"]) {
 				/call CastSpellFromTell "Clarity" "Spell" ${Spawn[pc ${ChatSender}].ID}
 				/delay 3.1s
+				/call CastSpellFromTell "Group Resist Magic" "Spell" ${Spawn[pc ${ChatSender}].ID}
+				/delay 4s
+				/call CastSpellFromTell "Brilliance" "Spell" ${Spawn[pc ${ChatSender}].ID}
+				/delay 4s
+			}
+			/if (${Spawn[pc ${ChatSender}].Class.Name.Equals["Monk"] || ${Spawn[pc ${ChatSender}].Class.Name.Equals["Rogue"]) {
+				/call CastSpellFromTell "Swift Like the Wind" "Spell" ${Spawn[pc ${ChatSender}].ID}
+				/delay 3.1s
+			}
+			/if (${Spawn[pc ${ChatSender}].Class.Name.Equals["Ranger"]) {
+				/call CastSpellFromTell "Clarity" "Spell" ${Spawn[pc ${ChatSender}].ID}
+				/delay 3.1s
+			}
+			/if (${Spawn[pc ${ChatSender}].Class.Name.Equals["Warrior"]) {
+				/call CastSpellFromTell "Augmentation" "Spell" ${Spawn[pc ${ChatSender}].ID}
+				/delay 3.1s
+				/call CastSpellFromTell "Group Resist Magic" "Spell" ${Spawn[pc ${ChatSender}].ID}
+				/delay 4s
+			}
+			/if (${Spawn[pc ${ChatSender}].Class.Name.Equals["Shadowknight"] || ${Spawn[pc ${ChatSender}].Class.Name.Equals["Paladin"]) {
+				/call CastSpellFromTell "Clarity" "Spell" ${Spawn[pc ${ChatSender}].ID}
+				/delay 3.1s
+				/call CastSpellFromTell "Augmentation" "Spell" ${Spawn[pc ${ChatSender}].ID}
+				/delay 4s
 				/call CastSpellFromTell "Group Resist Magic" "Spell" ${Spawn[pc ${ChatSender}].ID}
 				/delay 4s
 			}
